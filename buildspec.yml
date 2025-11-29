@@ -5,7 +5,7 @@ phases:
     commands:
       - echo "Installing Python dependencies..."
       - pip install --upgrade pip
-      - pip install sagemaker boto3 lightgbm scikit-learn pandas numpy
+      - pip install sagemaker==2.0.1 boto3 lightgbm scikit-learn pandas numpy
 
   build:
     commands:
