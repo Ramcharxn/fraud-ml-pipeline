@@ -16,6 +16,10 @@ from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score, precision_recall_curve, auc
 
+import subprocess, sys
+print("Here message")
+subprocess.check_call([sys.executable, "-m", "pip", "install", "lightgbm"])
+print("Here after message")
 import lightgbm as lgb
 
 
@@ -64,7 +68,7 @@ def train(args):
     model_dir = args.model_dir
 
     # Expecting these CSVs inside the 'training' channel
-    train_path = os.path.join(training_dir, 'train_merged1.csv')
+    train_path = os.path.join(training_dir, 'train_merged_with_capture.csv')
 
     print("Reading training data...")
     df = pd.read_csv(train_path)

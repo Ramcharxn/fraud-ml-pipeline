@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing Python dependencies..."
+      - pip install --upgrade pip
+      - pip install sagemaker boto3 lightgbm scikit-learn pandas numpy
+
+  build:
+    commands:
+      - echo "Starting SageMaker training and endpoint update..."
+      - python start_training.py
