@@ -1,11 +1,4 @@
 # start_training.py
-#
-# Run inside CodeBuild.
-# Uses SageMaker SKLearn estimator with fraud_sagemaker.py as entry point:
-#  - builds a combined training dataset (historical + recent captured data)
-#  - uploads it to S3
-#  - launches a SageMaker training job
-#  - deploys/updates the existing endpoint with the new model
 
 import os
 import json
