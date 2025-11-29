@@ -9,7 +9,7 @@
 
 import os
 import json
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from io import StringIO
 
 import boto3
@@ -112,7 +112,7 @@ def parse_capture_record(line: str):
 
 
 def load_recent_captured_data(bucket: str, prefix: str, recent_days: int) -> pd.DataFrame:
-    cutoff = datetime.utcnow() - timedelta(days=recent_days)
+    cutoff = datetime.now(timezone.utc) - timedelta(days=recent_days)
     print(f"Loading captured data from s3://{bucket}/{prefix} newer than {cutoff.isoformat()}")
 
     paginator = s3.get_paginator("list_objects_v2")
