@@ -152,6 +152,8 @@ def build_combined_training_data() -> str:
     base_df = load_base_training_data()
     recent_df = load_recent_captured_data(bucket, CAPTURE_PREFIX, RECENT_DAYS)
 
+    print("Recent data loaded")
+
     if recent_df.empty:
         print("No recent captured data; using base training data only.")
         combined_df = base_df
