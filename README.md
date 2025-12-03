@@ -2,9 +2,16 @@
 **Fully Automated End-to-End Fraud Detection System on AWS**  
 Real-time inference • Continuous training • Drift detection • Auto-retraining • Zero-downtime deployment  
 
-[![AWS](https://img.shields.io/badge/AWS-FF9900?style=flat&logo=amazonaws&logoColor=white)](https://aws.amazon.com/)
-[![SageMaker](https://img.shields.io/badge/SageMaker-FF6F00?style=flat&logo=amazon-sagemaker&logoColor=white)](https://aws.amazon.com/sagemaker/)
-[![LightGBM](https://img.shields.io/badge/LightGBM-00A1E1?style=flat)](https://lightgbm.readthedocs.io/)
+![AWS](https://img.shields.io/badge/AWS-FF9900?style=flat)
+![SageMaker](https://img.shields.io/badge/SageMaker-FF6F00?style=flat)
+![LightGBM](https://img.shields.io/badge/LightGBM-00A1E1?style=flat)
+![Lambda](https://img.shields.io/badge/Lambda-FF9900?style=flat)
+![CI/CD](https://img.shields.io/badge/CI%2FCD-4B0082?style=flat)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat)
+![MLOps](https://img.shields.io/badge/MLOps-000000?style=flat)
+
+
+
 
 ## 🚀 Key Features
 - **Automated CI/CD** via GitHub → CodePipeline → SageMaker
@@ -91,4 +98,5 @@ Enabled on SageMaker endpoint:
 ---
 
 **This is a production-grade, self-healing MLOps fraud detection system that continuously adapts to changing transaction patterns without human intervention.**
+
 
