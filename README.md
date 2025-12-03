@@ -23,7 +23,7 @@ Real-time inference • Continuous training • Drift detection • Auto-retrain
 - Combines historical + recent live data (with pseudo-labels) for retraining
 
 ## 🏗️ Architecture Overview
-<img width="2730" height="798" alt="diagram-export-12-3-2025-11_44_23-AM" src="https://github.com/user-attachments/assets/7c18e9a9-56dc-4c23-9a4c-9ec944ff8dc8" />
+<img width="1971" height="613" alt="diagram-export-12-3-2025-12_20_49-PM" src="https://github.com/user-attachments/assets/9d6fe9d0-261b-4350-990d-c81e51576136" />
 
 
 ## 📁 Project Structure
@@ -98,5 +98,6 @@ Enabled on SageMaker endpoint:
 ---
 
 **This is a production-grade, self-healing MLOps fraud detection system that continuously adapts to changing transaction patterns without human intervention.**
+
 
 
