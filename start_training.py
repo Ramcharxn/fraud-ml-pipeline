@@ -1,15 +1,9 @@
 # start_training.py
-#
-# Run inside CodeBuild.
-# Uses SageMaker SKLearn estimator with fraud_sagemaker.py as entry point:
-#  - builds a combined training dataset (historical + recent captured data)
-#  - uploads it to S3
-#  - launches a SageMaker training job
-#  - deploys/updates the existing endpoint with the new model
+
 
 import os
 import json
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from io import StringIO
 
 import boto3
@@ -112,7 +106,7 @@ def parse_capture_record(line: str):
 
 
 def load_recent_captured_data(bucket: str, prefix: str, recent_days: int) -> pd.DataFrame:
-    cutoff = datetime.utcnow() - timedelta(days=recent_days)
+    cutoff = datetime.now(timezone.utc) - timedelta(days=recent_days)
     print(f"Loading captured data from s3://{bucket}/{prefix} newer than {cutoff.isoformat()}")
 
     paginator = s3.get_paginator("list_objects_v2")
@@ -157,6 +151,8 @@ def build_combined_training_data() -> str:
     """Return the S3 URI to the combined training CSV (historical + recent)."""
     base_df = load_base_training_data()
     recent_df = load_recent_captured_data(bucket, CAPTURE_PREFIX, RECENT_DAYS)
+
+    print("Recent data loaded")
 
     if recent_df.empty:
         print("No recent captured data; using base training data only.")
